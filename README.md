@@ -20,6 +20,7 @@
   cd Github-Graph-Modifier
   cd src
   . RunScript.sh
+  
   ```
  **NOTE:** It Will Simply Ask To paste The Link of Your **Repository** & Further The Number of **Commits**
   ```bash
