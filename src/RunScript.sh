@@ -16,7 +16,7 @@ echo $filepath >> step1.txt  				# Gives Sample ``https://github.com/nazar-ansar
 cut -d/ -f 5 step1.txt > step2.txt			# Cut To the `some-demo.git`
 cut -d. -f 1 step2.txt > step3.txt			#  Get The Name of Directory `some-demo`
 path=$(cat step3.txt)
-cd $path											  # Change The path form current Directory To Clone Repo
+cd $path			              		  # Change The path form current Directory To Clone Repo
 rm -rf ../step*
 months=("Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sept" "Oct" "Nov" "Dec")
 datenumber=$(date +%m)				# Results example of Apr will 04
@@ -24,7 +24,7 @@ intdatenumber=$(expr $datenumber + 10 - 10 ) 		#To Convert Into Integer
 totaldatenumber=$(( 12 + intdatenumber ))
 commitspermonth=$(( remaining / totaldatenumber))			# To get the number of commits per month
 
-#										For Loop To execute For Previous Year
+#									For Loop To execute For Previous Year
 for current_month in {1..12};do
 	if [ $current_month -eq 2 ] ;then				# If a Month Is February
 		echo -ne "\t\t\t ${months[ $(( current_month - 1 )) ]} \n" >> message.txt
@@ -40,7 +40,7 @@ for current_month in {1..12};do
 			# sleep 0.05
 			clear
 		done			
-	else														# For Other Months
+	else							# For Other Months
 		echo -ne "\t\t\t ${months[ $(( current_month - 1 )) ]} \n" >> message.txt
 		for daysinmonth in $(seq 1 $commitspermonth);do
 	    	othermonthrand=$((RANDOM%30 + 1))
@@ -58,7 +58,7 @@ for current_month in {1..12};do
 	echo -ne "\t\t\t-----------------------------------------------------\n" >> message.txt;
 done
 
-#										For Loop To Execute For Current Year
+#									For Loop To Execute For Current Year
 thismonth=$(date +%m)
 tillnumber=$(expr $thismonth + 10 - 10 )
 for  monthofcurrentyear in {1..12};do
@@ -98,18 +98,18 @@ for  monthofcurrentyear in {1..12};do
 	fi
 done
 sleep 2
-git push &> /dev/null													# To Push The Commits To The Official Repo
+git push &> /dev/nul						# To Push The Commits To The Official Repo
 sleep 0.5
 clear
 echo -ne "\033[1;36m\t\t\t - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  \n"
 echo -ne "\033[1;36m\t\t\t|    DONE ! With The Process Check YOUR \"Remote\" Repo Now |\n"
 echo -ne "\033[1;36m\t\t\t - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"
 echo ""
-#																To Get The U.R.L of the Repository To open
+#								To Get The U.R.L of the Repository To open
 echo $filepath >> steplink.txt
 link=$(cut -d/ -f 1-4 steplink.txt)
 rm -rf steplink.txt
-#													Steps To Check Whether The Script Running On Windows Bash or LINUX
+#							Steps To Check Whether The Script Running On Windows Bash or LINUX
 echo 1 + 1 | bc &> /dev/null
 if [ $? -eq 0 ]; then
 	firefox $link
