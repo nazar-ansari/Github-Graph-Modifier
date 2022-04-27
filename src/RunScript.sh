@@ -10,6 +10,7 @@ echo -ne "\033[1;36m\t\t\t - - - - - - - - - - - - - - - - - - - - - - - - - - \
 echo ""
 read filepath			# To get The Link of Repo
 clear
+echo -ne "\t\t\tEnter The Total Number of \"COMMITS\" You Want To Be Proced :\n"
 read remaining			# To Get Total Number To perfom commits
 git clone $filepath &> /dev/null
 echo $filepath >> step1.txt  				# Gives Sample ``https://github.com/nazar-ansari/some-demo.git``
@@ -98,7 +99,7 @@ for  monthofcurrentyear in {1..12};do
 	fi
 done
 sleep 2
-git push &> /dev/nul						# To Push The Commits To The Official Repo
+git push &> /dev/null						# To Push The Commits To The Official Repo
 sleep 0.5
 clear
 echo -ne "\033[1;36m\t\t\t - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  \n"
