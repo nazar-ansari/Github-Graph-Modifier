@@ -10,3 +10,10 @@ echo -ne "\033[1;36m\t\t\t - - - - - - - - - - - - - - - - - - - - - - - - - - \
 echo ""
 read filepath			# To get The Link of Repo
 clear
+read remaining			# To Get Total Number To perfom commits
+git clone $filepath &> /dev/null
+echo $filepath >> step1.txt  				# Gives Sample ``https://github.com/nazar-ansari/some-demo.git``
+cut -d/ -f 5 step1.txt > step2.txt			# Cut To the `some-demo.git`
+cut -d. -f 1 step2.txt > step3.txt			#  Get The Name of Directory `some-demo`
+path=$(cat step3.txt)
+cd $path											  # Change The path form current Directory To Clone Repo
