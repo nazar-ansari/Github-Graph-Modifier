@@ -22,11 +22,11 @@ rm -rf ../step*
 months=("Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sept" "Oct" "Nov" "Dec")
 datenumber=$(date +%m)				# Results example of Apr will 04
 intdatenumber=$(expr $datenumber + 10 - 10 ) 		#To Convert Into Integer
-totaldatenumber=$(( 12 + intdatenumber ))
+totaldatenumber=12
 commitspermonth=$(( remaining / totaldatenumber))			# To get the number of commits per month
 
 #									For Loop To execute For Previous Year
-for current_month in {1..12};do
+for current_month in $( seq $( expr $intdatenumber + 1) 12 );do
 	if [ $current_month -eq 2 ] ;then				# If a Month Is February
 		echo -ne "\t\t\t ${months[ $(( current_month - 1 )) ]} \n" >> message.txt
 		for daysinfeb in $(seq 1 $commitspermonth);do
