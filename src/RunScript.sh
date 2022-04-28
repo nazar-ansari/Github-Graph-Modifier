@@ -17,3 +17,9 @@ cut -d/ -f 5 step1.txt > step2.txt			# Cut To the `some-demo.git`
 cut -d. -f 1 step2.txt > step3.txt			#  Get The Name of Directory `some-demo`
 path=$(cat step3.txt)
 cd $path											  # Change The path form current Directory To Clone Repo
+rm -rf ../step*
+months=("Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sept" "Oct" "Nov" "Dec")
+datenumber=$(date +%m)				# Results example of Apr will 04
+intdatenumber=$(expr $datenumber + 10 - 10 ) 		#To Convert Into Integer
+totaldatenumber=$(( 12 + intdatenumber ))
+commitspermonth=$(( remaining / totaldatenumber))			# To get the number of commits per month
