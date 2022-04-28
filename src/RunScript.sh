@@ -97,3 +97,23 @@ for  monthofcurrentyear in {1..12};do
 	echo -ne "\t\t\t-----------------------------------------------------\n" >> message.txt;
 	fi
 done
+sleep 2
+git push &> /dev/null													# To Push The Commits To The Official Repo
+sleep 0.5
+clear
+echo -ne "\033[1;36m\t\t\t - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  \n"
+echo -ne "\033[1;36m\t\t\t|    DONE ! With The Process Check YOUR \"Remote\" Repo Now |\n"
+echo -ne "\033[1;36m\t\t\t - - - - - - - - - - - - - - - - - - - - - - - - - - - - - \n"
+echo ""
+#																To Get The U.R.L of the Repository To open
+echo $filepath >> steplink.txt
+link=$(cut -d/ -f 1-4 steplink.txt)
+rm -rf steplink.txt
+#													Steps To Check Whether The Script Running On Windows Bash or LINUX
+echo 1 + 1 | bc &> /dev/null
+if [ $? -eq 0 ]; then
+	firefox $link
+else
+	start chrome $link
+fi
+cd ..
