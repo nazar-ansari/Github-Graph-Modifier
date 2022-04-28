@@ -57,3 +57,43 @@ for current_month in {1..12};do
 	fi
 	echo -ne "\t\t\t-----------------------------------------------------\n" >> message.txt;
 done
+
+#										For Loop To Execute For Current Year
+thismonth=$(date +%m)
+tillnumber=$(expr $thismonth + 10 - 10 )
+for  monthofcurrentyear in {1..12};do
+	if [ $monthofcurrentyear -eq $(( $tillnumber + 1 )) ] ; then
+		break
+	else
+		if [ $monthofcurrentyear -eq 2 ] ;then
+			echo -ne "\t\t\t ${months[ $(( monthofcurrentyear - 1 )) ]} \n" >> message.txt
+			for daysinfeb in $(seq 1 $commitspermonth);do
+				febrandom=$((RANDOM%28 + 1))
+				echo "committed on ${current_year}-${monthofcurrentyear}-${febrandom}" >> message.txt ;
+				git add . &> /dev/null
+				git commit -m "created on ${current_year}-${monthofcurrentyear}-${febrandom} " --date=${current_year}-${monthofcurrentyear}-${febrandom} &> /dev/null
+				let remaining=remaining-1
+				echo -ne "\033[0;97m \t- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n"
+				echo -ne "\e[93m \t\t\t- - - - ->\tRemaining Duration is : \" $remaining s\"\t<- - - - - \n"
+				echo -ne "\033[0;97m \t- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n"
+				# sleep 0.05
+				clear
+			done			
+		else
+			echo -ne "\t\t\t ${months[ $(( monthofcurrentyear - 1 )) ]} \n" >> message.txt
+			for daysinmonth in $(seq 1 $commitspermonth);do
+				othermonthrand=$((RANDOM%30 + 1))
+			    echo "committed on ${current_year}-${monthofcurrentyear}-${othermonthrand}" >> message.txt ;
+				git add . &> /dev/null
+				git commit -m "created on ${current_year}-${monthofcurrentyear}-${othermonthrand} " --date=${current_year}-${monthofcurrentyear}-${othermonthrand} &> /dev/null
+				let remaining=remaining-1
+				echo -ne "\033[0;97m \t- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n"
+				echo -ne "\e[93m \t\t\t- - - - ->\tRemaining Duration is : \" $remaining s\"\t<- - - - - \n"
+				echo -ne "\033[0;97m \t- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n"
+				# sleep 0.05
+				clear
+			done
+		fi
+	echo -ne "\t\t\t-----------------------------------------------------\n" >> message.txt;
+	fi
+done
