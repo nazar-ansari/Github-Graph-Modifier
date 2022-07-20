@@ -17,8 +17,9 @@
 - ```bash
 
   cd ~/ ; git clone https://github.com/nazar-ansari/Github-Graph-Modifier.git 
-  cd Github-Graph-Modifier/src/ ; . RunScript.sh
-  
+  cd Github-Graph-Modifier/src/
+  . RunScript.sh
+  .
   ```
  **NOTE:** It Will Simply Ask To paste The Link of Your **Repository** & Further The Number of **Commits**
   ```bash
