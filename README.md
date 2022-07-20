@@ -1,8 +1,8 @@
 <hr>
 
-# **_🦑Github Contribution Graph Modifier🦑_**
-<hr>
+<h1 align="center">🦑<i>Github Contribution Graph Modifier</i>🦑</h1> 
 
+<hr>
 ## **_Short Info About Project :_**
 
 - :one: `This Script is made completely for education purpose and not for spamming` _**"Github"**_**.**
@@ -17,8 +17,9 @@
 - ```bash
 
   cd ~/ ; git clone https://github.com/nazar-ansari/Github-Graph-Modifier.git 
-  cd Github-Graph-Modifier/src/ ; . RunScript.sh
-  
+  cd Github-Graph-Modifier/src/
+  . RunScript.sh
+  .
   ```
  **NOTE:** It Will Simply Ask To paste The Link of Your **Repository** & Further The Number of **Commits**
   ```bash
@@ -43,5 +44,11 @@
 ![imgae2](./src/png/graphfull.png)
 <hr>
 
-#### 👨‍💻Feel Free To Contirbute To This Project With Respective To Github Guidelines👨‍💻
-**Copyright :copyright: :** _[Nazar Ansari](./LICENSE)_
+# 👨‍💻 _**Contibuting Guidelines** :_
+- **Feel free to Make Your Great Contribution by following the [Contribution](./CONTRIBUTING.md) Guidelines .**
+  
+<hr>
+
+# _**License:**_
+- **This Project is License Under the MIT Guidelines See [License](./LICENSE.md) For more Details .**
+<hr>
