@@ -87,6 +87,14 @@ for  monthofcurrentyear in {1..12};do
 	echo -ne "\t\t\t-----------------------------------------------------\n" >> message.txt;
 	fi
 done
+                                                                # For loop for Commiting the remaining no of total commits
+for Commits_Decimal in $(seq 1 $Remaining_Commits);do
+    echo "Additional Commits From Remaining : $Commits_Decimal" >>message.txt
+    git add . &> /dev/null
+	git commit -m "Additional Commits From Remaining : $Commits_Decimal" &> /dev/null
+	let Number_of_Commits=Number_of_Commits-1
+	echo -ne "\e[93m \t\t\t* - - - - ->\tRemaining Duration is : \" $Number_of_Commits s\"\t <- - - - - * \r"			# sleep 0.05
+done
 sleep 2
 git push &> /dev/null						# To Push The Commits To The Official Repo
 sleep 0.5
