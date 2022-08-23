@@ -27,6 +27,7 @@ CurrMonthInt=$(date +%m)				# Results example of Apr will 04
 Current_Month=$(expr $CurrMonthInt + 10 - 10 ) 		#To Convert Into Integer
 Total_Months=12
 Commits_Per_month=$(( Number_of_Commits / Total_Months))			# To get the number of commits per month
+Remaining_Commits=$(( Number_of_Commits - (Commits_Per_month*12)))              # To get the total extra commit need to be done after " Number_of_Commits / Total_Months  "
 
 #									For Loop To execute For Previous Year
 echo -ne "\e[93m \t\t\t* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * \n"
