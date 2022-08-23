@@ -3,6 +3,7 @@
 <h1 align="center">🦑<i>Github Contribution Graph Modifier</i>🦑</h1> 
 
 <hr>
+
 ## **_Short Info About Project :_**
 
 - :one: `This Script is made completely for education purpose and not for spamming` _**"Github"**_**.**
